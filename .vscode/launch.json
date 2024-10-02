@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Debug Project",
+            "type": "lldb",
+            "request": "launch",
+            "preLaunchTask": "build debug executable",
+            "program": "${workspaceFolder}/mineEscape_debug",
+            "stdio": [
+                "${workspaceFolder}/test-9-vs.txt", // redirect stdin
+                null, // redirect stdout
+                null // redirect stderr
+            ],
+            "args": [
+                "-v",
+                "-s",
+                "10",
+                "<",
+                "test-9-vs.txt"
+            ],
+            "stopOnEntry": false,
+            "cwd": "${workspaceFolder}",
+            "postDebugTask": "clean workspace"
+        },
+    ]
+}
